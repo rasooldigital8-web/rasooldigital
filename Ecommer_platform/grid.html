@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>This is about Grid system</title>
+    <style>
+        :root{
+            --border-color: #e48e0e;
+            --border-radius: 10px;
+            --background-color: #95a5c5;
+        }
+        #container{
+       display: grid;
+       grid-template-rows:1fr 8fr 2fr;
+            gap: 40px;
+        }
+        .box{
+            width: 50%;
+            background-color:var(--background-color);
+            color: white; 
+            padding:10px;
+            /* margin: 10px; */
+            border: 4px solid var(--border-color);
+            border-radius: var(--border-radius);
+        }
+        .boxchild{
+            background-color:var(--background-color);
+            color: white; 
+            padding:10px;
+            /* margin: 10px; */
+            width: 50%S;
+            border: 4px solid var(--border-color);
+            border-radius: var(--border-radius);
+        }
+       #container> .box:nth-child(2){
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <div class="box">Box1</div>
+        <div class="box">
+            <div class="boxchild">1</div>
+            <div class="boxchild">2</div>
+            <div class="boxchild">3</div>
+            <div class="boxchild">4</div>
+        </div>
+        <div class="box">Box3</div>
+        <div class="box">Box4</div>
+    </div>
+</body>
+</html>
